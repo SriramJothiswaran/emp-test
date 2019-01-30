@@ -1,0 +1,87 @@
+<div class="container">
+
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+      Add Employee {{loading}}
+    </h1>
+  </div>
+
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp bg-primary text-white mr-3">
+              <i class="fe fe-credit-card"></i>
+            </span>
+            <div>
+              <small class="text-muted">FIRST STEP</small>
+              <h4 class="m-0">Scan Card</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp bg-primary text-white mr-3">
+              <i class="fe fe-credit-card"></i>
+            </span>
+            <div>
+              <small class="text-muted">SECOND STEP</small>
+              <h4 class="m-0">Set ID to Card</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp mr-3">
+              <i class="fe fe-list"></i>
+            </span>
+            <div>
+              <small class="text-muted">THIRD STEP</small>
+              <h4 class="m-0">Add Employee Details</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp mr-3">
+              <i class="fe fe-check"></i>
+            </span>
+            <div>
+              <small class="text-muted">FINAL STEP</small>
+              <h4 class="m-0">Confirmation</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card border-0">
+    <div class="card-body text-white bg-image">
+      <p>Card Scanned Sucessfully!</p>
+      <h1 class="mb-1">Card UID - {{cardUID}}</h1>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label class="form-label">YOUR PRIMARY ID</label>
+            <input type="text" class="form-control" placeholder="e.g. 001" required>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="alert alert-icon alert-danger mb-1" role="alert">
+      <i class="fe fe-alert-triangle mr-2" aria-hidden="true"></i> click continue and swipe the card.
+    </div>
+    <div class="page-options d-flex">
+      <button ng-click="setPrimaryKey()" type="button" class="btn btn-primary">CONTINUE</button>
+      <div style="color:red">{{portError}}</div>
+    </div>
+  </div>
+
+</div>

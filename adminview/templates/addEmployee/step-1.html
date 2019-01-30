@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+      Add Employee
+    </h1>
+  </div>
+
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp bg-primary text-white mr-3">
+              <i class="fe fe-credit-card"></i>
+            </span>
+            <div>
+              <small class="text-muted">FIRST STEP</small>
+              <h4 class="m-0">Scan Card</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp mr-3">
+              <i class="fe fe-list"></i>
+            </span>
+            <div>
+              <small class="text-muted">SECOND STEP</small>
+              <h4 class="m-0">Add Employee Details</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp mr-3">
+              <i class="fe fe-check"></i>
+            </span>
+            <div>
+              <small class="text-muted">FINAL STEP</small>
+              <h4 class="m-0">Confirmation</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="mb-4 text-center">
+        <img src="../public/images/device.png" alt="Device" width="230" class="img-fluid">
+      </div>
+      <h4 class="card-title text-center mb-5">Place the card on the reader and hit continue</h4>
+      <div class="card-title text-center mb-5">
+        <button ng-click="validateCard()" class="btn btn-primary" style="color:white">Continue</button>
+        <div style="color:red">{{portError}}</div>
+      </div>
+    </div>
+  </div>
+  <p class="text-center w-100 text-muted font-italic">
+    <a href="#">Problems scanning?</a>
+  </p>
+
+</div>

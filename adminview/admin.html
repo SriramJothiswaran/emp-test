@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="msapplication-TileColor" content="#00AFE6">
+    <meta name="theme-color" content="#00AFE6">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <title>Employo - Admin Login</title>
+    <link rel="stylesheet" href="../public/stylesheets/app.css">
+    <script src="../public/js/angular.min.js"></script>
+    <script src="../public/js/angular-route.min.js"></script>
+    <script src="../public/js/angular-resource.min.js"></script>
+    <script src="../public/js/app.js"></script>
+
+  </head>
+  <body ng-app="employoApp" ng-controller="loginCtrl">
+    <div class="page">
+
+
+  <div class="page-single login-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col col-login mx-auto">
+          <div class="text-center mb-6">
+            <img src="../public/images/logo.png" class="h-6" alt="">
+          </div>
+          <form name="loginForm" class="card" novalidate>
+            <div class="card-body p-6">
+              <div class="card-title text-center">Admin Login</div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email address</label>
+                <input id="email" name="email" ng-model="email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" type="email" class="form-control" ng-class="{ 'is-invalid' : loginForm.email.$invalid && !loginForm.email.$pristine }" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="password" class="form-label">
+                  Password
+                  <a href="./forgot-password.html" class="float-right small">Forgot password</a>
+                </label>
+                <input id="password" name="password" ng-model="password" type="password" class="form-control" ng-class="{ 'is-invalid' : loginForm.password.$invalid && !loginForm.password.$pristine }" id="exampleInputPassword1" placeholder="Password" required>
+              </div>
+              <div id="error" style="color:red"></div>
+              <!-- <div class="form-group">
+                <label class="custom-control custom-checkbox">
+                  <input name="" type="checkbox" class="custom-control-input" required>
+                  <span class="custom-control-label">Remember me</span>
+                </label>
+              </div> -->
+              <div class="form-footer mb-4">
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid">LOGIN</button>
+              </div>
+              <div class="text-center text-muted">
+                Don't have account? <a href="#" onclick="loadSignup()">Sign up</a >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+    <script src="../public/js/require.min.js"></script>
+    <script>
+      requirejs.config({
+          baseUrl: '.'
+      });
+    </script>
+    <script src="../public/js/dashboard.js"></script>
+    <script type="text/javascript">
+        // You can also require other files to run in this process
+        require('../renderer.js')
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+
+        function loadSignup() {
+          ipcRenderer.send('load:adminSignup');
+        }
+
+
+      //validate user entered data against database
+        document.querySelector('form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          let loginData = {
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value
+          };
+          console.log(loginData);
+          ipcRenderer.send('send:loginData', loginData);
+        });
+
+        ipcRenderer.on('login:invalid', () => {
+          document.getElementById('error').innerHTML = "invalid username or password";
+        })
+    </script>
+  </body>
+</html>

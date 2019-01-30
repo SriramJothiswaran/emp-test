@@ -1,0 +1,68 @@
+<!-- <div class="row">
+  <div class="col-lg-8"></div>
+  <div class="col-lg-4">
+    <h3>Time Left</h3>
+    <div class="wrapper">
+      <div class="pie spinner"></div>
+      <div class="pie filler"></div>
+      <div class="mask"></div>
+    </div>
+    <h2 class="timer-seconds" ng-class="{'timer-red': countDownTimer < 11}">{{countDownTimer}}<small>secs<small></h2>
+  </div>
+</div> -->
+      <a class="btn btn-primary btn-lg m-6 mt-0" href="#!afterswipe">
+        <i class="fe fe-arrow-left mr-2"></i>Go back
+      </a>
+      <div class="row">
+        <div class="col mx-auto p-6">
+          <h1>Your Profile</h1>
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-label">Employee Name</label>
+                <input type="text" value="James Bond" ng-model="employee.EmployeeName" class="form-control" placeholder="e.g. James Bond" required disabled="">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-label">Employee ID</label>
+                <input disabled="" ng-model="employee.EmployeeID" type="text" class="form-control" value="10001" required>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-label">Date of birth</label>
+                <input disabled="" ng-model="employee.dob" type="text" class="form-control" required disabled="">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-label">Your Gender</label>
+                <select name="gender" ng-model="employee.gender" id="select-gender" class="form-control custom-select" disabled="">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-label">Contact Number</label>
+                <input type="text" ng-model="employee.contactNumber" class="form-control" placeholder="e.g. 1234567890" required disabled="">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-label">Email ID</label>
+                <input type="email" ng-model="employee.email" class="form-control" placeholder="e.g. james@bond.com" required disabled="">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-label">Home Address</label>
+                <textarea  ng-model="employee.address" class="form-control" name="example-textarea-input" rows="6" placeholder="Employee's Home Address" disabled></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

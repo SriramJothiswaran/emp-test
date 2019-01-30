@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="msapplication-TileColor" content="#00AFE6">
+    <meta name="theme-color" content="#00AFE6">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <title>Employo</title>
+    <link rel="stylesheet" href="../public/stylesheets/app.css">
+    <link rel="stylesheet" href="../public/stylesheets/sweet-alert.css">
+
+    <script src="../public/js/jquery-3.2.1.min.js"></script>
+    <script src="../public/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../public/js/angular.min.js"></script>
+    <script src="../public/js/sweet-alert.min.js"></script>
+    <script src="../public/js/sweetAlert.js"></script>
+    <script src="../public/js/angular-route.min.js"></script>
+    <script src="../public/js/angular-resource.min.js"></script>
+    <link href="../public/stylesheets/angular-datepicker.css" rel="stylesheet" type="text/css" />
+    <script src="../public/js/angular-datepicker.js"></script>
+    <script src="../public/js/app.js"></script>
+    <script src="../public/js/popper.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
+    <script src="../public/js/chart.min.js"></script>
+    <script src="../public/js/moment.js"></script>
+
+
+
+
+  </head>
+  <body ng-app="employoApp" ng-controller="dashboardCtrl">
+    <div class="page">
+
+
+<div class="page-main dashboard-wrapper">
+  <div class="sidebar bg-image collapse d-lg-flex p-0" id="headerMenuCollapse">
+  <ul class="nav border-0 d-flex flex-column flex-nowrap">
+    <a class="nav-item header-brand" href="/">
+      <img src="../public/images/logo.png" class="header-brand-img" alt="Employo logo">
+    </a>
+    <div ng-repeat="menu in menus">
+      <li class="nav-item" ng-class="{active : activeMenu === menu.name}" ng-disabled="menu.disabled">
+        <a ng-href="{{menu.href}}" class="nav-link" ng-click="setActive(menu.name)" ><i ng-class="menu.iclass"></i>{{menu.name}}</a>
+      </li>
+    </div>
+
+  </ul>
+</div>
+  <div class="dashboard-main">
+    <div class="header py-4">
+  <div class="container">
+    <div class="d-flex">
+      <a class="header-brand d-sm-block d-md-none" href="/">
+        <img src="../public/images/logo-blue.png" class="header-brand-img" alt="Employo logo">
+      </a>
+      <div class="d-flex order-lg-2 ml-auto">
+        <div class="nav-item d-none d-md-flex">
+          <form class="input-icon my-3 my-lg-0">
+            <input type="search" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
+            <div class="input-icon-addon">
+              <i class="fe fe-search"></i>
+            </div>
+          </form>
+        </div>
+        <div class="dropdown d-none d-md-flex">
+          <a class="nav-link icon" data-toggle="dropdown">
+            <i class="fe fe-bell"></i>
+            <span class="nav-unread"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+            <a href="#" class="dropdown-item d-flex">
+              <span class="avatar avatar-pink mr-3">MF</span>
+              <div>
+                <strong>Michael Fisher</strong> sent a request of absent for 24 Jan 2019. Do you wish to accept it?
+                <div class="small text-muted">16:34</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item d-flex">
+              <span class="avatar avatar-blue mr-3">AB</span>
+              <div>
+                <strong>Agnes Bowman</strong> sent a request of absent for 12 Jan 2019. Do you wish to accept it?
+                <div class="small text-muted">19:34</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item d-flex">
+              <span class="avatar mr-3 align-self-center" style="background-image: url(../public/images/pic.jpg)"></span>
+              <div>
+                <strong>James Bond</strong> sent a request of absent for 24 Jan 2019.
+                <div class="small text-muted">16:34</div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item text-center text-muted-dark">Open All Notifications</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+            <span class="avatar" style="background-image: url(./public/images/pic.jpg)"></span>
+            <span class="ml-2 d-none d-lg-block">
+              <span id="adminName" ng-bind="adminName" class="text-default"></span>
+              <small class="text-muted d-block mt-1">Administrator</small>
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+            <a class="dropdown-item" href="#!profile">
+              <i class="dropdown-icon fe fe-user"></i> Profile
+            </a>
+            <a class="dropdown-item" href="#!settings">
+              <i class="dropdown-icon fe fe-settings"></i> Settings
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="dropdown-icon fe fe-help-circle"></i> Need help?
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="admin.html">
+              <i class="dropdown-icon fe fe-log-out"></i> Sign out
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+        <span class="header-toggler-icon"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div ng-view></div>
+
+
+  </div>
+</div>
+
+
+    </div>
+    <script src="../public/js/require.min.js"></script>
+    <script>
+      requirejs.config({
+          baseUrl: '.'
+      });
+    </script>
+    <script src="../public/js/dashboard.js"></script>
+    <script type="text/javascript">
+      // You can also require other files to run in this process
+
+    </script>
+  </body>
+</html>

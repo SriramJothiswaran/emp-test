@@ -1,0 +1,123 @@
+
+<div class="container" data-ng-init="onloadEmployee()">
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+      View Employee Profile
+    </h1>
+  </div>
+  <form name="employeeData" class="card" novalidate>
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="name" class="form-label">Employee Name</label>
+            <input id="name" name="name" ng-model="viewEmp.name" type="text" class="form-control"  disabled>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="employeeId" class="form-label">Employee ID</label>
+            <input id="employeeId" name="employeeId" ng-model="viewEmp.id"  type="text" class="form-control"  disabled>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="dob" class="form-label">DOB</label>
+            <datepicker date-format="MMMM d, y" date-max-limit="{{dateLimit()}}">
+            <input id="dob" name="dob" ng-model="viewEmp.dob" class="form-control"  type="text" disabled />
+          </datepicker>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="gender" class="form-label">Select a Gender</label>
+            <select id="gender" ng-model="viewEmp.gender" name="gender" id="select-gender" class="form-control custom-select" disabled>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="contactNo" class="form-label">Contact Number</label>
+            <input id="contactNo" name="contactNo" ng-model="viewEmp.contactNo" type="text" class="form-control" disabled>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="email" class="form-label">Email ID</label>
+            <input id="email" name="email" ng-model="viewEmp.email" type="email" class="form-control" disabled>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="address" class="form-label">Home Address</label>
+            <textarea id="address" name="address" ng-model="viewEmp.address" class="form-control"  disabled></textarea>
+          </div>
+        </div>
+    </div>
+    <div class="card text-center">
+      <a href="#!employees" class="btn btn-primary">Go Back</a>
+    </div>
+  </div>
+</div>
+</form>
+
+
+<div class="card border-0">
+  <div class="card-body">
+    <h3>Last Transactions</h3>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="table-responsive">
+            <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+              <thead>
+                <tr>
+                  <th>Last Checked In</th>
+                  <th>Worked Hours This Week</th>
+                  <th class="text-center">Current Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="transaction in viewEmp.transactions | orderBy: '_doc.time':true">
+                  <td>
+                    <div>{{transaction._doc.time | date: 'MMM d, y h:mm:ss a'}}</div>
+                    <div class="small text-muted">
+                      {{transaction._doc.status}}
+                      {{hello()}}
+                    </div>
+                  </td>
+                  <td>
+                    <div class="clearfix">
+                      <div class="float-left">
+                        <strong>{{transaction._doc.hoursWorked |  number : 2}}/45</strong>
+                      </div>
+                      <div class="float-right">
+                        <small class="text-muted" ng-if="transaction._doc.hoursWorked > 45">Overtime </small>
+                        <small class="text-muted" ng-if="transaction._doc.hoursWorked < 46">{{getStatus(transaction._doc.time, transaction._doc.hoursWorked)}} </small>
+
+                      </div>
+                    </div>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar" ng-class="{'bg-red': transaction._doc.hoursWorked < 45 && getStatus(transaction._doc.time, transaction._doc.hoursWorked) == 'Undertime' , 'bg-green': transaction._doc.hoursWorked > 45}" role="progressbar" style="width: {{2.22* transaction._doc.hoursWorked}}%" aria-valuenow="{{2.22* transaction._doc.hoursWorked}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </td>
+                  <td class="text-center">
+                    <div class="tag" ng-class="{'tag-success': transaction._doc.status == 'checkedIn', 'tag-danger': transaction._doc.status == 'checkedOut'}">
+                      {{transaction._doc.status.substring(7)}}
+                      <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

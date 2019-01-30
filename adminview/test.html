@@ -1,0 +1,563 @@
+<div class="dashboard-main">
+  <div class="header py-4">
+<div class="container">
+  <div class="d-flex">
+    <a class="header-brand d-sm-block d-md-none" href="/">
+      <img src="../public/images/logo-blue.png" class="header-brand-img" alt="Employo logo">
+    </a>
+    <div class="d-flex order-lg-2 ml-auto">
+      <div class="nav-item d-none d-md-flex">
+        <form class="input-icon my-3 my-lg-0">
+          <input type="search" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
+          <div class="input-icon-addon">
+            <i class="fe fe-search"></i>
+          </div>
+        </form>
+      </div>
+      <div class="dropdown d-none d-md-flex">
+        <a class="nav-link icon" data-toggle="dropdown">
+          <i class="fe fe-bell"></i>
+          <span class="nav-unread"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+          <a href="#" class="dropdown-item d-flex">
+            <span class="avatar avatar-pink mr-3">MF</span>
+            <div>
+              <strong>Michael Fisher</strong> sent a request of absent for 24 Jan 2019. Do you wish to accept it?
+              <div class="small text-muted">16:34</div>
+            </div>
+          </a>
+          <a href="#" class="dropdown-item d-flex">
+            <span class="avatar avatar-blue mr-3">AB</span>
+            <div>
+              <strong>Agnes Bowman</strong> sent a request of absent for 12 Jan 2019. Do you wish to accept it?
+              <div class="small text-muted">19:34</div>
+            </div>
+          </a>
+          <a href="#" class="dropdown-item d-flex">
+            <span class="avatar mr-3 align-self-center" style="background-image: url(../public/images/pic.jpg)"></span>
+            <div>
+              <strong>James Bond</strong> sent a request of absent for 24 Jan 2019.
+              <div class="small text-muted">16:34</div>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item text-center text-muted-dark">Open All Notifications</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+          <span class="avatar" style="background-image: url(./public/images/pic.jpg)"></span>
+          <span class="ml-2 d-none d-lg-block">
+            <span id="adminName" ng-bind="adminName" class="text-default"></span>
+            <small class="text-muted d-block mt-1">Administrator</small>
+          </span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+          <a class="dropdown-item" href="#">
+            <i class="dropdown-icon fe fe-user"></i> Profile
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="dropdown-icon fe fe-settings"></i> Settings
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="dropdown-icon fe fe-help-circle"></i> Need help?
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <i class="dropdown-icon fe fe-log-out"></i> Sign out
+          </a>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+      <span class="header-toggler-icon"></span>
+    </a>
+  </div>
+</div>
+</div>
+
+    <div class="card border-0 rounded-0 shadow-none text-white bg-primary bg-image">
+      <div class="card-body d-flex justify-content-between flex-wrap py-7">
+        <div>
+          <h1 class="mb-3 font-weight-normal">Bonjour, James Bond!</h1>
+          <div>Lorem ipsum dolor sit amet, consectetur.</div>
+        </div>
+        <div class="width-mobile mt-5">
+          <span class="float-right font-weight-bold">44/120</span>
+          <h5>CHECKED IN EMPLOYEES</h5>
+          <div class="progress progress-sm">
+            <div style="width: 60%;" class="progress-bar bg-warning"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <div class="card border-0">
+            <div class="card-body">
+              <div class="card-title title-border text-primary font-weight-bold">
+                PRESENT EMPLOYEES
+              </div>
+              <h1 class="display-1 m-0">44</h1>
+              <h4 class="mb-1 text-muted">Checked in today</h4>
+              <hr>
+              <div>
+                <span class="text-muted text-uppercase font-weight-bold">Total Payment</span>
+                <div class="float-right font-weight-bold">120</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <div class="card border-0">
+            <div class="card-body">
+              <div class="card-title title-border text-primary font-weight-bold">
+                NEW LEAVE REQUESTS
+              </div>
+              <h1 class="display-1 m-0">14</h1>
+              <h4 class="mb-1 text-muted">New Requests</h4>
+              <hr>
+              <div>
+                <span class="text-muted text-uppercase font-weight-bold">TOTAL LEAVE REQUESTS</span>
+                <div class="float-right font-weight-bold">14/30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <div class="card border-0">
+            <div class="card-body">
+              <div class="card-title title-border text-primary font-weight-bold">
+                CHECKED IN - WEEKLY
+              </div>
+              <h4 class="mt-6 text-muted">Coming Soon!</h4>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <h1 class="page-title font-weight-bold">
+          Recently Checked-in Employees
+        </h1>
+        <div class="page-options d-flex">
+          <button type="button" class="btn btn-primary"><i class="fe fe-plus mr-2"></i>ADD NEW EMPLOYEE</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card border-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                <thead>
+                  <tr>
+                    <th class="text-center w-1"><i class="fe fe-users"></i></th>
+                    <th>Name</th>
+                    <th>Last Checked In</th>
+                    <th>Worked Hours This Week</th>
+                    <th class="text-center">Current Status</th>
+                    <th class="text-center"><i class="fe fe-settings"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">
+                      <div class="avatar d-block" style="background-image: url(/images/pic.jpg)">
+                      </div>
+                    </td>
+                    <td>
+                      <div>James Bond</div>
+                      <div class="small text-muted">
+                        ID : jkdwho278
+                      </div>
+                    </td>
+                    <td>
+                      <div>12:45 pm 12 Dec</div>
+                      <div class="small text-muted">
+                        Checked In
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>20/45</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">On time</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-yellow" role="progressbar" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="tag tag-danger">
+                        Out
+                        <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="avatar avatar-azure">MS</span>
+                    </td>
+                    <td>
+                      <div>Michelle Schultz</div>
+                      <div class="small text-muted">
+                        ID : jkdwho278
+                      </div>
+                    </td>
+                    <td>
+                      <div>12:20 pm 12 Dec</div>
+                      <div class="small text-muted">
+                        Checked Out
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>4/45</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Undertime</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-red" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="20" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="tag tag-success">
+                        In
+                        <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="avatar avatar-indigo">CA</span>
+                    </td>
+                    <td>
+                      <div>Crystal Austin</div>
+                      <div class="small text-muted">
+                        ID : jkdwho278
+                      </div>
+                    </td>
+                    <td>
+                      <div>01:20 pm 11 Dec</div>
+                      <div class="small text-muted">
+                        Checked In
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>23/45</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">On time</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-green" role="progressbar" style="width: 96%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="tag tag-success">
+                        In
+                        <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="avatar avatar-purple">DR</span>
+                    </td>
+                    <td>
+                      <div>Douglas Ray</div>
+                      <div class="small text-muted">
+                        ID : jkdwho278
+                      </div>
+                    </td>
+                    <td>
+                      <div>12:00 pm 11 Dec</div>
+                      <div class="small text-muted">
+                        Checked In
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>55/45</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Overtime</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-red" role="progressbar" style="width: 6%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="tag tag-danger">
+                        Out
+                        <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="avatar avatar-pink">TR</span>
+                    </td>
+                    <td>
+                      <div>Teresa Reyes</div>
+                      <div class="small text-muted">
+                        ID : jkdwho278
+                      </div>
+                    </td>
+                    <td>
+                      <div>12:45 pm 10 Dec</div>
+                      <div class="small text-muted">
+                        Checked In
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>40/45</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">On time</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-red" role="progressbar" style="width: 36%" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="tag tag-success">
+                        In
+                        <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="avatar avatar-red">EW</span>
+                    </td>
+                    <td>
+                      <div>Emma Wade</div>
+                      <div class="small text-muted">
+                        ID : jkdwho278
+                      </div>
+                    </td>
+                    <td>
+                      <div>10:30 pm 10 Dec</div>
+                      <div class="small text-muted">
+                        Checked In
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>45/45</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">On time</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-red" role="progressbar" style="width: 7%" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="tag tag-danger">
+                        Out
+                        <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="avatar avatar-orange">CH</span>
+                    </td>
+                    <td>
+                      <div>Carol Henderson</div>
+                      <div class="small text-muted">
+                        ID : jkdwho278
+                      </div>
+                    </td>
+                    <td>
+                      <div>07:00 pm 10 Dec</div>
+                      <div class="small text-muted">
+                        Checked Out
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>5/45</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Undertime</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-green" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="tag tag-success">
+                        In
+                        <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="avatar avatar-green">CH</span>
+                    </td>
+                    <td>
+                      <div>Christopher Harvey</div>
+                      <div class="small text-muted">
+                        ID : jkdwho278
+                      </div>
+                    </td>
+                    <td>
+                      <div>07:40 pm 10 Dec</div>
+                      <div class="small text-muted">
+                        Checked Out
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>33/45</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">On time</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-green" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="tag tag-success">
+                        In
+                        <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>

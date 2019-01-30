@@ -1,0 +1,129 @@
+
+  <div class="container" data-ng-init="onloadEmployee()">
+
+    <script>
+         $(document).ready(function(){
+            $('.dropdown-toggle').dropdown()
+        });
+    </script>
+
+    <div class="page-header">
+      <h1 class="page-title font-weight-bold">
+        All Employees
+      </h1>
+      <div class="page-options d-flex">
+        <div class="input-icon mx-2">
+          <span class="input-icon-addon">
+            <i class="fe fe-search"></i>
+          </span>
+          <input type="text" class="form-control w-10" ng-model="search" placeholder="Search employees">
+        </div>
+        <a href="#!step1" class="btn btn-primary"><i class="fe fe-plus mr-2"></i>ADD NEW EMPLOYEE</a>
+      </div>
+    </div>
+
+<div ng-hide="showAllEmployees"> Loading ........ </div>
+
+
+    <div class="row" ng-show="showAllEmployees">
+      <div class="col-12">
+        <div class="card border-0">
+          <div class="table-responsive">
+            <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+              <thead>
+                <tr>
+                  <th class="text-center w-1"><i class="fe fe-users"></i></th>
+                  <th>Name</th>
+                  <th>Last Checked In</th>
+                  <th>Worked Hours This Week</th>
+                  <th class="text-center">Current Status</th>
+                  <th class="text-center"><i class="fe fe-settings"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="employeeDetail in allEmployeeDetails | filter:{ name: search } |  orderBy:'name' | startFrom:currentPage*pageSize | limitTo:pageSize"">
+                  <td class="text-center">
+                    <span class="avatar avatar-azure">{{employeeDetail.shortName}}</span>
+                  </td>
+                  <td>
+                    <div>{{employeeDetail.name}}</div>
+                    <div class="small text-muted">
+                      ID : {{employeeDetail.id}}
+                    </div>
+                  </td>
+                  <td>
+                    <div>{{employeeDetail.time | date: 'MMM d, y @ h:mma'}}</div>
+                    <div class="small text-muted">
+                      {{employeeDetail.status}}
+                    </div>
+                  </td>
+                  <td>
+                    <div class="clearfix">
+                      <div class="float-left">
+                        <strong>{{employeeDetail.hoursWorked}}/45</strong>
+                      </div>
+                      <div class="float-right">
+                        <small class="text-muted">{{employeeDetail.weeklyStatus}}</small>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar" ng-class="{'bg-red': employeeDetail.weeklyStatus == 'Undertime', 'bg-green': employeeDetail.weeklyStatus == 'On time', 'bg-green': employeeDetail.weeklyStatus == 'Overtime'}" role="progressbar" style="width: {{2.22* employeeDetail.hoursWorked}}%" aria-valuenow="{{2.22* employeeDetail.hoursWorked}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </td>
+                  <td class="text-center">
+                    <div class="tag" ng-class="{'tag-success': employeeDetail.status == 'checkedIn', 'tag-danger': employeeDetail.status == 'checkedOut'}">
+                      {{employeeDetail.status.substring(7)}}
+                      <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                    </div>
+                  </td>
+                  <td class="text-center">
+                    <div class="item-action dropdown show">
+                      <a data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a ng-click="employeeProfileView(employeeDetail.id)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> View </a>
+                        <a ng-click="employeeProfileEdit(employeeDetail.id)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i>Edit</a>
+                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i>Message (future)</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<!-- pagination -->
+        <div class="d-flex align-items-center mb-6">
+          <div class="page-total-text">{{currentPage == 0 ? currentPage+1 : null}} {{(currentPage > 0) && currentPage !== 0 && (currentPage+(pageSize*currentPage)) < (allEmployeeDetails.length)  ? currentPage+(pageSize*currentPage) : null}} {{(currentPage+(pageSize*currentPage)) > (allEmployeeDetails.length) ?  allEmployeeDetails.length : null}}  -{{pageSize* (currentPage+1) < allEmployeeDetails.length ? pageSize* (currentPage+1) : allEmployeeDetails.length }} of {{allEmployeeDetails.length}} items</div>
+          <ul class="pagination m-0">
+            <li class="page-item page-prev">
+              <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="page-link" tabindex="-1">
+                Prev
+              </button>
+            </li>
+            {{numberOfPages()}}
+            <li class="page-item" ng-repeat="n in [] | range: totalPages" ng-class="{'active': n == currentPage}"><a ng-click="pageChange(n)" class="page-link">{{n + 1}}</a></li>
+
+
+            <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li> -->
+            <li class="page-item page-next">
+              <button class="page-link"  ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                Next
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+  </div>
+</div>

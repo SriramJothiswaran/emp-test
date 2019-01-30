@@ -1,0 +1,38 @@
+<div class="container" data-ng-init="holidayListLoad()">
+
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+      Holiday List
+    </h1>
+    <div class="page-options d-flex">
+      <a href="#!modifyholidaylist" class="mr-3">
+        <button type="button" class="btn btn-secondary">Modify Existing List</button>
+      </a>
+
+        <button ng-click="navigateToAddHoliday()"  class="btn btn-primary">Add New Holiday</button>
+    </div>
+  </div>
+<div class="table-responsive">
+  <table class="table">
+  <thead>
+    <tr class="bg-primary">
+      <th class="font-weight-bold text-white" scope="col">#</th>
+      <th class="font-weight-bold text-white" scope="col">Date</th>
+      <th class="font-weight-bold text-white" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="holiday in loadedHolidayList | orderBy: 'leaveDate':false">
+      <th scope="row">{{$index + 1}}</th>
+      <td>{{holiday._doc.leaveDate | date : "MMM d, y"}}</td>
+      <td>{{holiday._doc.description}}</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+
+
+
+</div>

@@ -1,0 +1,112 @@
+<!-- <div class="row">
+  <div class="col-lg-8"></div>
+  <div class="col-lg-4">
+    <h3>Time Left</h3>
+    <div class="wrapper">
+      <div class="pie spinner"></div>
+      <div class="pie filler"></div>
+      <div class="mask"></div>
+    </div>
+    <h2 class="timer-seconds" ng-class="{'timer-red': countDownTimer < 11}">{{countDownTimer}}<small>secs<small></h2>
+  </div>
+</div> -->
+      <a class="btn btn-primary btn-lg m-6 mt-0" href="#!afterswipe">
+        <i class="fe fe-arrow-left mr-2"></i>Go back
+      </a>
+      <div class="row">
+        <div class="col mx-auto p-6">
+          <h1>Your History</h1>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="card-title title-border text-primary font-weight-bold">
+                    HOURS THIS MONTH
+                  </div>
+                  <h1 class="display-1 m-0">{{employeeData.transaction[employeeData.transaction.length - 1]._doc.hoursWorked |  number : 2}}</h1>
+                  <h4 class="mb-1 text-muted">/ 45 Hours</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="card-title title-border text-primary font-weight-bold">
+                    LEAVE REQUESTS THIS MONTH
+                  </div>
+                  <h1 class="display-1 m-0">0</h1>
+                  <h4 class="mb-1 text-muted">Requests</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="table-responsive">
+                  <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                    <thead>
+                      <tr>
+                        <th>Last Checked In</th>
+                        <th>Worked Hours This Week</th>
+                        <th class="text-center">Current Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="status in employeeData.transaction | orderBy: '_doc.time':true | startFrom:currentPage*pageSize | limitTo:pageSize"">
+                        <td>
+                          <div>{{status._doc.time | date: 'MMM d, y h:mm:ss a'}}</div>
+                          <div class="small text-muted">
+                            {{status._doc.status}}
+                            {{hello()}}
+                          </div>
+                        </td>
+                        <td>
+                          <div class="clearfix">
+                            <div class="float-left">
+                              <strong>{{status._doc.hoursWorked |  number : 2}}/45</strong>
+                            </div>
+                            <div class="float-right">
+                              <small class="text-muted" ng-if="status._doc.hoursWorked > 45">Overtime </small>
+                              <small class="text-muted" ng-if="status._doc.hoursWorked < 46">{{getStatus(status._doc.time, status._doc.hoursWorked)}} </small>
+
+                            </div>
+                          </div>
+                          <div class="progress progress-xs">
+                            <div class="progress-bar" ng-class="{'bg-red': status._doc.hoursWorked < 45 && getStatus(status._doc.time, status._doc.hoursWorked) == 'Undertime' , 'bg-green': status._doc.hoursWorked > 45}" role="progressbar" style="width: {{2.22* status._doc.hoursWorked}}%" aria-valuenow="{{2.22* status._doc.hoursWorked}}" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </td>
+                        <td class="text-center">
+                          <div class="tag" ng-class="{'tag-success': status._doc.status == 'checkedIn', 'tag-danger': status._doc.status == 'checkedOut'}">
+                            {{status._doc.status.substring(7)}}
+                            <span class="tag-addon"><i class="fe fe-circle"></i></span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center mb-6">
+          <ul class="pagination m-0">
+            <li class="page-item page-prev" ng-class="{disabled: currentPage == 0}">
+              <button ng-disabled="currentPage == 0"  ng-click="currentPage=currentPage-1" class="page-link" tabindex="-1">
+                Prev
+              </button>
+            </li>
+            <li class="page-item page-next" ng-class="{disabled: currentPage >= employeeData.transaction.length/pageSize - 1}"">
+              <button class="page-link" ng-disabled="currentPage >= employeeData.transaction.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                Next 
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,60 @@
+<div class="container">
+
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+      Reports
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <div class="card border-0">
+        <div class="card-body">
+          <h3 class="card-title">Weekly Report</h3>
+          <form>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label class="form-label">Email-Address</label>
+                  <input class="form-control" ng-model="adminEmail" type="email" placeholder="james@bond.com" disabled="">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input class="form-control" ng-model="adminName" disabled>
+            </div>
+            <div class="form-footer">
+              <!-- <button class="btn btn-primary">Save</button> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div class="card border-0">
+        <div class="card-body">
+          <h3 class="card-title">Monthly Report</h3>
+          <form name="updatePasswordForm" novalidate>
+              <div class="form-group">
+                <label for="oldPassword" class="form-label">Old Password</label>
+                <input ng-model="changePasswordFormData.oldPassword" id="oldPassword" name="oldPassword" type="password" class="form-control" ng-class="{ 'is-invalid' : updatePasswordForm.oldPassword.$invalid && !updatePasswordForm.oldPassword.$pristine }" required>
+              </div>
+              <div class="form-group">
+                <label for="newPassword" class="form-label">New Password</label>
+                <input ng-model="changePasswordFormData.newPassword" id="newPassword" name="newPassword" type="password" class="form-control" ng-class="{ 'is-invalid' : updatePasswordForm.newPassword.$invalid && !updatePasswordForm.newPassword.$pristine }"required>
+              </div>
+            <div class="form-footer">
+              <button type="submit" class="btn btn-primary" ng-click="changePassword()" ng-disabled="updatePasswordForm.$invalid">Update</button>
+            </div>
+            <div style="color:red">{{changePasswordError}}</div>
+            <div style="color:green">{{changePasswordSuccess}}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

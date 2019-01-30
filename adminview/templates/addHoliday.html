@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+      Add New Holiday
+    </h1>
+  </div>
+  <form name="addHoliday" class="card" novalidate>
+    <div class="card border-0">
+      <div class="card-body">
+        <div class="row" ng-repeat="holiday in holidayList">
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <label for="date" class="form-label">Date</label>
+              <datepicker date-format="MMMM d, y">
+              <input ng-model="holiday.leaveDate" id="date" name="date" class="form-control" type="text"/>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <label for="description" class="form-label">Description</label>
+              <input ng-model="holiday.description" id="description" name="description" class="form-control" type="text"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="page-options d-flex">
+            <button ng-click="addMoreHoliday()" type="button" class="btn btn-secondary">Add More</button>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <button ng-click="holidaySubmit()"  class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

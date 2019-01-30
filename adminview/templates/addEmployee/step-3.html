@@ -1,0 +1,125 @@
+
+<div class="container">
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+      Add Employee
+    </h1>
+  </div>
+
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp bg-primary text-white mr-3">
+              <i class="fe fe-credit-card"></i>
+            </span>
+            <div>
+              <small class="text-muted">FIRST STEP</small>
+              <h4 class="m-0">Scan Card</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp bg-primary text-white mr-3">
+              <i class="fe fe-list"></i>
+            </span>
+            <div>
+              <small class="text-muted">SECOND STEP</small>
+              <h4 class="m-0">Add Employee Details</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex align-items-center my-2">
+            <span class="stamp mr-3">
+              <i class="fe fe-check"></i>
+            </span>
+            <div>
+              <small class="text-muted">FINAL STEP</small>
+              <h4 class="m-0">Confirmation</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card border-0">
+    <div class="card-body text-white bg-image">
+      <p>Card Scanned Sucessfully!</p>
+      <h1 class="mb-1">Card UID - {{cardUID}}</h1>
+    </div>
+
+
+  <form name="employeeData" class="card" novalidate>
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="card-title">Add Employee Details</div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="name" class="form-label">Employee Name</label>
+            <input id="name" name="name" ng-model="employee.name" type="text" class="form-control" ng-class="{ 'is-invalid' : employeeData.name.$invalid && !employeeData.name.$pristine }" placeholder="e.g. James Bond" required>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="employeeId" class="form-label">Employee ID</label>
+            <input id="employeeId" name="employeeId" ng-model="employee.id"  type="text" class="form-control" ng-class="{ 'is-invalid' : employeeData.employeeId.$invalid && !employeeData.employeeId.$pristine }" value="10001" required>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="dob" class="form-label">DOB</label>
+            <datepicker date-format="MMMM d, y" date-max-limit="{{dateLimit()}}">
+            <input id="dob" name="dob" ng-model="employee.dob" class="form-control" ng-class="{ 'is-invalid' : employeeData.dob.$invalid && !employeeData.dob.$pristine }" type="text"/>
+          </datepicker>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="gender" class="form-label">Select a Gender</label>
+            <select id="gender" ng-model="employee.gender" name="gender" id="select-gender" class="form-control custom-select" ng-class="{ 'is-invalid' : employeeData.gender.$invalid && !employeeData.gender.$pristine }" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="contactNo" class="form-label">Contact Number</label>
+            <input id="contactNo" name="contactNo" ng-model="employee.contactNo" type="text" class="form-control" ng-class="{ 'is-invalid' : employeeData.contactNo.$invalid && !employeeData.contactNo.$pristine }" placeholder="e.g. 1234567890" required>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="email" class="form-label">Email ID</label>
+            <input id="email" name="email" ng-model="employee.email" type="email" class="form-control" ng-class="{ 'is-invalid' : employeeData.email.$invalid && !employeeData.email.$pristine }"  placeholder="e.g. james@bond.com" required>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="address" class="form-label">Home Address</label>
+            <textarea id="address" name="address" ng-model="employee.address" class="form-control" ng-class="{ 'is-invalid' : employeeData.address.$invalid && !employeeData.address.$pristine }" name="example-textarea-input" rows="6" placeholder="Employee's Home Address"></textarea>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="page-header">
+    <div class="page-options d-flex">
+      <button type="button" ng-click="addEmployee()" class="btn btn-primary" ng-disabled="employeeData.$invalid">CONTINUE</button>
+    </div>
+  </div>
+
+</div>
+<div style="color:green">{{employeeAddSuccess}}</div>
+<div style="color:red">{{employeeAddError}}</div>
+</form>

@@ -1,0 +1,36 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=x64  --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\""
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^4.0.2",
+    "electron-packager": "^13.0.1",
+    "electron-rebuild": "^1.8.2"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.0",
+    "express-session": "^1.15.6",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.6",
+    "path": "^0.12.7",
+    "serialport": "^7.1.4",
+    "sweetalert": "^2.1.2"
+  }
+}

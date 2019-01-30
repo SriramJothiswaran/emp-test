@@ -1,0 +1,35 @@
+<!-- <div class="row" style="margin-top: -50px; margin-bottom: -20px;">
+  <div class="col-lg-8"></div>
+  <div class="col-lg-4">
+    <h3>Time Left</h3>
+    <div class="wrapper">
+      <div class="pie spinner"></div>
+      <div class="pie filler"></div>
+      <div class="mask"></div>
+    </div>
+    <h2 class="timer-seconds" ng-class="{'timer-red': countDownTimer < 11}">{{countDownTimer}}<small>secs<small></h2>
+  </div>
+</div> -->
+<a class="btn btn-primary btn-lg m-6 mt-0" href="#!afterswipe">
+  <i class="fe fe-arrow-left mr-2"></i>Go back
+</a>
+<h2 class="text-center">Holiday/Leave List</h2>
+<div class="table-responsive">
+  <table class="table">
+  <thead>
+    <tr class="bg-primary">
+      <th class="font-weight-bold text-white" scope="col">#</th>
+      <th class="font-weight-bold text-white" scope="col">Date</th>
+      <th class="font-weight-bold text-white" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="holiday in loadedHolidayList | orderBy: 'date':false">
+      <th scope="row">{{$index + 1}}</th>
+      <td>{{holiday.date}}</td>
+      <td>{{holiday.description}}</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>

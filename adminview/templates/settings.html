@@ -1,0 +1,44 @@
+<div class="container" data-ng-init="onloadSettings()">
+
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+    Settings
+    </h1>
+  </div>
+
+
+  <form name="employeeData" class="card" novalidate>
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="port" class="form-label">Port</label>
+          <select ng-model="selectedPort" class="form-control custom-select">
+            <option ng-repeat="port in portsList" value="{{port}}">{{port}}</option>
+          </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="baudrate" class="form-label">Baud Rate </label>
+            <input id="baudrate" name="baudrate" ng-model="baudRate" type="text" class="form-control" disabled>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="card text-center">
+      <a ng-click="updateSettings(selectedPort)" class="btn btn-primary">Update</a>
+    </div>
+  </div>
+</div>
+</form>
+
+
+
+
+
+</div>

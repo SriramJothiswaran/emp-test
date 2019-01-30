@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Employo</title>
+  </head>
+  <link rel="stylesheet" href="public/stylesheets/app.css">
+  <link rel="stylesheet" href="public/stylesheets/fullcalendar.css">
+  <script src="public/js/angular.min.js"></script>
+  <script src="public/js/angular-route.min.js"></script>
+  <script src="public/js/employeeApp.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="public/js/fullcalendar/lib/moment.min.js"></script>
+  <script src="public/js/fullcalendar/calendar.js"></script>
+  <script src="public/js/fullcalendar/fullcalendar.js"></script>
+  <body ng-app="employoApp" ng-controller="dashboardCtrl">
+
+    <div class="page">
+
+
+    <div class="page-single employee-wrapper">
+    <div class="container">
+      <div class="header-brand text-center my-5">
+        <a href="/">
+          <img src="public/images/logo-blue.png" class="header-brand-img m-0" alt="Employo logo">
+        </a>
+      </div>
+      <a href="adminview/admin.html">Admin</a>
+      <div ng-view></div>
+    </div>
+    </div>
+
+
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      console.log('hello');
+      $('#calendar').fullCalendar({
+   // put your options and callbacks here
+ })
+
+    });
+    </script>
+    <script src="public/js/require.min.js"></script>
+    <script>
+      requirejs.config({
+          baseUrl: '.'
+      });
+    </script>
+    <script src="public/js/dashboard.js"></script>
+  </body>
+</html>

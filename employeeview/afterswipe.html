@@ -1,0 +1,27 @@
+<!--
+<div class="row">
+  <div class="col-lg-8"></div>
+  <div class="col-lg-4">
+    <h3>Time Left</h3>
+    <div class="wrapper">
+      <div class="pie spinner"></div>
+      <div class="pie filler"></div>
+      <div class="mask"></div>
+    </div>
+    <h2 class="timer-seconds" ng-class="{'timer-red': countDownTimer < 11}">{{countDownTimer}}secs</h2>
+  </div>
+</div> -->
+<div class="row">
+
+  <div class="col mx-auto text-center welcome-wrapper">
+    <img src="../public/images/tickmark.png" class="mb-5" width="100" style="width: 100px;" alt="">
+    <h3 class="text-success">{{employeeStatus}} Sucessfull!</h3>
+    <h3>Welcome, {{employeeName}}</h3>
+    <h1 class="my-7">{{employeeStatusTime | date: 'MMM d, y h:mm:ss a'}}</h1>
+
+    <button ng-click="viewProfile(employeeData)" class="btn btn-primary btn-lg m-2">VIEW PROFILE</button>
+    <button ng-click="viewHistory(employeeData)" class="btn btn-primary btn-lg m-2">VIEW HISTORY</button>
+    <button ng-click="leaveCalendar()" class="btn btn-primary btn-lg m-2">HOLIDAY LIST</button>
+    <button ng-click="exitProfile()" class="btn btn-danger btn-lg m-2">EXIT</button>
+  </div>
+</div>

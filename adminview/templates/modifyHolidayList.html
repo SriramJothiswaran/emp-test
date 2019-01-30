@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="page-header">
+    <h1 class="page-title font-weight-bold">
+      Modify Holiday List
+    </h1>
+  </div>
+  <form name="addHoliday" class="card" novalidate>
+    <div class="card border-0">
+      <div class="card-body">
+        <div class="row" ng-repeat="holiday in loadedHolidayList">
+          <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+              <label for="date" class="form-label">Date</label>
+              <datepicker date-format="MMMM d, y">
+              <input ng-model="holiday._doc.leaveDate" id="date" name="date" class="form-control" type="text"/>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+              <label for="description" class="form-label">Description</label>
+              <input ng-model="holiday._doc.description" id="description" name="description" class="form-control" type="text"/>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+              <label for="description" class="form-label">action</label>
+              <button class="btn btn-danger" ng-click="removeHoliday($index)">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="page-options d-flex">
+            <button ng-click="modifyHoliday()"  class="btn btn-primary">Update</button>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <!-- <button ng-click="holidaySubmit()"  class="btn btn-primary">Submit</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
